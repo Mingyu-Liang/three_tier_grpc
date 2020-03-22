@@ -9,7 +9,5 @@
 ## Usage
 
 ```
-
 docker-compose up
-
 ```
