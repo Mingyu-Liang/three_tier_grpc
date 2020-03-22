@@ -1,0 +1,9 @@
+disabled: false
+reporter:
+  logSpans: true
+  localAgentHostPort: "0.0.0.0:6800"
+  queueSize: 10000
+  bufferFlushInterval: 1
+sampler:  
+  type: const
+  param: 1

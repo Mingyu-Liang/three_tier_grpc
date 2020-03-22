@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+message HelloRequest {
+  string name = 1;
+}
+message HelloReply {
+  string message = 1;
+}
+
+service service_0{
+  rpc rpc_0 (HelloRequest) returns (HelloReply) {}
+}
+
+service service_1{
+  rpc rpc_1 (HelloRequest) returns (HelloReply) {}
+}
+
+service service_2{
+  rpc rpc_2 (HelloRequest) returns (HelloReply) {}
+}
+
+service service_3{
+  rpc rpc_3 (HelloRequest) returns (HelloReply) {}
+}
+

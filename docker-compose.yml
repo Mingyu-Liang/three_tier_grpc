@@ -1,0 +1,52 @@
+version: "3"
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    hostname: jaeger
+    ports:
+      - 16610:16686
+      - 6800:6831
+    restart: always
+
+  frontend:
+    image: ml2585/grpc_frontend
+    hostname: frontend
+    ports:
+      - 9999:9090
+    command: bash -c "source /etc/profile && cd /frontend && go mod init frontend && go build *.go && go run *.go"
+    restart: always
+    volumes:
+      - ./frontend/frontend:/frontend
+
+  service_1:
+    image: ml2585/three_tier_grpc
+    hostname: service_1
+    restart: always
+    entrypoint: service_1
+    volumes:
+      - ./config:/auto_grpc/config
+
+  service_0:
+    image: ml2585/three_tier_grpc
+    hostname: service_0
+    restart: always
+    entrypoint: service_0
+    volumes:
+      - ./config:/auto_grpc/config
+
+  service_3:
+    image: ml2585/three_tier_grpc
+    hostname: service_3
+    restart: always
+    entrypoint: service_3
+    volumes:
+      - ./config:/auto_grpc/config
+
+  service_2:
+    image: ml2585/three_tier_grpc
+    hostname: service_2
+    restart: always
+    entrypoint: service_2
+    volumes:
+      - ./config:/auto_grpc/config
+

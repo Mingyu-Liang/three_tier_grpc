@@ -1,0 +1,30 @@
+{
+  "service_0" : {
+    "server_addr" : "service_0",
+    "server_port" : 9000,
+    "rpcs_receive" : [0],
+    "rpcs_send" : [1,2],
+    "scaler" : 1
+  },
+  "service_1" : {
+    "server_addr" : "service_1",
+    "server_port" : 9001,
+    "rpcs_receive" : [1],
+    "rpcs_send" : [3],
+    "scaler" : 1
+  },
+  "service_2" : {
+    "server_addr" : "service_2",
+    "server_port" : 9002,
+    "rpcs_receive" : [2],
+    "rpcs_send" : [],
+    "scaler" : 1
+  },
+  "service_3" : {
+    "server_addr" : "service_3",
+    "server_port" : 9003,
+    "rpcs_receive" : [3],
+    "rpcs_send" : [],
+    "scaler" : 1
+  }
+}
