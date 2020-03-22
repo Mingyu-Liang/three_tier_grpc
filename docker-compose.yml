@@ -13,7 +13,7 @@ services:
     hostname: frontend
     ports:
       - 9999:9090
-    command: bash -c "source /etc/profile && cd /frontend && go mod init frontend && go build *.go && go run *.go"
+    command: bash -c "source /etc/profile && cd /frontend && rm go.mod go.sum helloworld.pb && go mod init frontend && go build *.go && go run *.go"
     restart: always
     volumes:
       - ./frontend/frontend:/frontend
